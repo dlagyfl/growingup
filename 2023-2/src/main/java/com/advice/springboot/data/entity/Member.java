@@ -1,6 +1,7 @@
 package com.advice.springboot.data.entity;
 
 
+import com.advice.springboot.data.dto.MemberDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

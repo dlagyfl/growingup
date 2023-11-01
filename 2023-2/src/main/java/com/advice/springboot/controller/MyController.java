@@ -25,13 +25,13 @@ public class MyController {
             return "index";
       }
 
-      @GetMapping("/board")
-      public String 게시판(Model model) {
-            List<BoardResDto> boardResDtoList = boardService.전체글보기();
-
-            model.addAttribute("boards", boardResDtoList);
-            return "board";
-      }
+//      @GetMapping("/board")
+//      public String 게시판(Model model) {
+//            List<BoardResDto> boardResDtoList = boardService.전체글보기();
+//
+//            model.addAttribute("boards", boardResDtoList);
+//            return "board";
+//      }
 
       @GetMapping("/board/view/{id}")
       public String 게시판글보기(@PathVariable("id") String boardId, Model model) {

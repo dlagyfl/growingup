@@ -14,6 +14,10 @@ public class MemberService {
             this.memberRepository = memberRepository;
       }
 
+      public void 멤버추가() {
+
+      }
+
       public Member 학회원찾기(String membername) {
             return memberRepository.findByMembername(membername);
       }

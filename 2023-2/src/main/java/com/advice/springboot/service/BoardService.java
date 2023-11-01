@@ -23,35 +23,35 @@ public class BoardService {
             this.memberService = memberService;
       }
 
-      public void 글쓰기(BoardDto boardDto) {
-            Member member = memberService.학회원찾기(boardDto.getUsername());
+//      public void 글쓰기(BoardDto boardDto) {
+//            Member member = memberService.학회원찾기(boardDto.getUsername());
+//
+//            Board board = Board.builder()
+//                    .title(boardDto.getTitle())
+//                    .content(boardDto.getContent())
+//                    .price(boardDto.getPrice())
+//                    .member(member)
+//                    .build();
+//
+//
+//
+//            boardRepository.save(board);
+//      }
 
-            Board board = Board.builder()
-                    .title(boardDto.getTitle())
-                    .content(boardDto.getContent())
-                    .price(boardDto.getPrice())
-                    .member(member)
-                    .build();
-
-
-
-            boardRepository.save(board);
-      }
-
-      public List<BoardResDto> 전체글보기() {
-
-            List<Board> boards = boardRepository.findAll();
-            List<BoardResDto> boardResDtos = new ArrayList<>();
-
-            for(Board board : boards) {
-                  boardResDtos.add(BoardResDto.builder()
-                          .id(board.getId())
-                          .title(board.getTitle())
-                          .name(board.getMember().getMembername())
-                          .build());
-            }
-            return boardResDtos;
-      }
+//      public List<BoardResDto> 전체글보기() {
+//
+//            List<Board> boards = boardRepository.findAll();
+//            List<BoardResDto> boardResDtos = new ArrayList<>();
+//
+//            for(Board board : boards) {
+//                  boardResDtos.add(BoardResDto.builder()
+//                          .id(board.getId())
+//                          .title(board.getTitle())
+//                          .name(board.getMember().getMembername())
+//                          .build());
+//            }
+//            return boardResDtos;
+//      }
 
       public Optional<Board> 글보기(String boardId) {
             return boardRepository.findById(Integer.parseInt(boardId));
